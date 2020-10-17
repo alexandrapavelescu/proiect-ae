@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h1>{{produs.denumire}}</h1>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <img src="../assets/img/crema_hidratanta.jpg" class="card-img-top" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div><b>Rating:</b> {{avgRating.toFixed(2)}}</div>
+      <div><b>Numar recenzii:</b> </div>
+      <div><b>Brand: <span class="product-brand-name">{{produs.brand}}</span></b></div>
+      <div><b>Descriere</b></div>
+      <div>{{produs.descriere}}</div>
+      <div><b>Acorda o nota</b></div>
+      <div>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(1)">1</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(2)">2</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(3)">3</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(4)">4</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(5)">5</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(6)">6</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(7)">7</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(8)">8</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(9)">9</button>
+        <button class="btn btn-light mx-1 my-1" (click)="addRating(10)">10</button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body h-100">
+          <div class="d-flex w-100 h-100 flex-column justify-content-center align-items-center">
+            <div class="product-big-price">{{produs.pret}} RON</div>
+            <div *ngIf="produs.stoc == 0" class="product-out-of-stock">Stoc: {{produs.stoc}} bucati</div>
+            <div *ngIf="produs.stoc > 0" class="product-in-stock">Stoc: {{produs.stoc}} bucati</div>
+            <div class="w-100 mt-auto">
+              <button class="btn btn-info w-100 font-weight-bold mb-2">Adauga in cos</button>
+              <button class="btn btn-fav w-100">Adauga in la favorite</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="font-weight-bold">Ingrediente</div>
+          <div class="mt-2">
+            <span *ngFor="let i of ingrediente" class="badge badge-pill badge-secondary badge-ingredient tooltip-test" title="{{i.descriere}}">{{i.denumire}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="font-weight-bold">Recenzii</div>
+          <div *ngFor="let rec of recenzii"class="mt-2">
+            <div class="review-username">{{rec.username}}
+               <i class="material-icons align-middle c-pointer" (click)="deleteRecenzie(rec.id_recenzie)">delete</i>
+               <i class="material-icons align-middle c-pointer">create</i>
+            </div>
+            <div class="review-comment">{{rec.comentariu}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3 mb-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="font-weight-bold">Adauga o recenzie</div>
+          <div class="mt-2">
+            <!--<form>-->
+              <div class="form-group">
+                <label for="username">Nume de utilizator</label>
+                <input type="text" class="form-control" id="username" [(ngModel)]="username">
+              </div>
+              <div class="form-group">
+                <label for="comentariu">Comentariu</label>
+                 <textarea class="form-control" id="comentariu" rows="3" [(ngModel)]="comentariu"></textarea>
+              </div>
+              <button class="btn btn-primary" (click)="addRecenzie()">Trimite</button>
+            <!--</form>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

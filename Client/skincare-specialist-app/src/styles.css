@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+
+.nav.navbar.bg-dark {
+  background-color: purple !important;
+}
+
+.skincare-navbar.bg-light {
+  background-color: #663573 !important;
+}
+
+.brand-name {
+  color: white !important;
+  font-weight: bold;
+}
+
+.product-brand-name {
+  color: #02b3bd;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e00d7b;
+}
+
+.product-big-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-out-of-stock {
+  color: #e00d5e;
+  size: 1.3rem;
+  font-weight: bold;
+}
+
+.product-in-stock {
+  color: #0de05a;
+  size: 1.3rem;
+  font-weight: bold;
+}
+
+.btn-info {
+    height: 50px !important;
+}
+
+.btn-fav {
+  background-color: white;
+  border: 3px solid #17a2b8;
+  color: #17a2b8;
+  height: 50px !important;
+}
+
+.badge-ingredient {
+  padding: 10px !important;
+  margin: 3px !important;
+}
+
+.review-username {
+  font-weight: bold;
+  color: #fc03a9;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.ingredients-yes {
+  background-color: #dbfff0 !important;
+}
+
+.ingredients-no {
+  background-color: #fbdbff !important;
+}
+
+.btn-search {
+  background-color: #17a2b8 !important;
+  color: white;
+}

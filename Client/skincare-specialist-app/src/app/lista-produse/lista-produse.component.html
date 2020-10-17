@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="row mt-4">
+    <div class="col-md-12 card ingredients-yes">
+        <div class="card-body">
+          <h6 class="card-title">Alege ingredientele pe care vrei sa le contina produsul tau</h6>
+          <div>
+            <div *ngFor="let iDa of ingredienteDa" class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckboxDa{{iDa.id_ingredient}}" [(ngModel)]="iDa.selectat">
+              <label class="form-check-label" for="inlineCheckboxDa{{iDa.id_ingredient}}">{{iDa.denumire}}</label>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="card col-md-12 ingredients-no">
+        <div class="card-body">
+          <h6 class="card-title">Alege ingredientele pe care NU vrei sa le contina produsul tau</h6>
+          <div>
+            <div *ngFor="let iNu of ingredienteNu" class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckboxNu{{iNu.id_ingredient}}" value="iNu.selectat">
+              <label class="form-check-label" for="inlineCheckboxNu{{iNu.id_ingredient}}">{{iNu.denumire}}</label>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-light mr-2">Inchide</button>
+      <button class="btn btn-light btn-search mr-0" (click)="aplicaFiltru()">Cauta</button>
+    </div>
+  </div>
+
+  <div class="row mt-4 mb-4">
+    <div *ngFor="let prod of produse" class="card col-md-3">
+      <img src="../assets/img/crema_hidratanta.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{prod.denumire}}</h5>
+        <small class="product-brand-name">{{prod.brand}}</small>
+        <p class="card-text">{{prod.descriere}}</p>
+        <div class="d-flex justify-content-between align-items-end">
+          <div>
+            <button class="btn btn-info details-button" (click)="goToProdus(prod)">Detalii</button>
+          </div>
+          <div class="product-price">{{prod.pret}} RON</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
